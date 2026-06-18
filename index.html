@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Myportfolio — Java, Python, Spring Boot, AI. Fresher developer open to opportunities.">
+  <meta name="keywords" content="Software Engineer, Java, Python, Spring Boot, REST API, AI/ML, Fresher, Portfolio">
+  <meta name="author" content="B S S Aparna">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="B S S Aparna ">
+  <meta property="og:description" content="Fresher Software Engineer skilled in Java, Python, Spring Boot, and AI/ML.">
+  <meta property="og:type" content="website">
+  <title>B S S Aparna</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__spinner"></div>
+    <p class="loader__text">Loading Portfolio</p>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Page scroll progress"></div>
+
+  <!-- Particle Background Canvas -->
+  <canvas id="particle-canvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <!-- NAV LOGO IMAGE: Change src path below to your photo -->
+      <a href="#home" class="nav__logo" aria-label="Go to home section">
+        <img
+          src="assets/profile.jpg">"
+          alt="B S S Aparna"
+          class="nav__logo-image"
+          width="42"
+          height="42"
+        >
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#home" class="nav__link active">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+        <li><a href="#achievements" class="nav__link">Achievements</a></li>
+        <li><a href="#resume" class="nav__link">Resume</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero section" id="home">
+      <div class="hero__container container">
+        <div class="hero__image-wrapper reveal">
+          <div class="hero__image-ring">
+            <!-- HERO PHOTO: Change src path below to your photo (same as navbar) -->
+            <img
+              src="assets/profile.jpg"
+              alt="B S S Aparna — Software Engineer"
+              class="hero__image"
+              width="320"
+              height="340"
+              onerror="this.src='https://ui-avatars.com/api/?name=Aparna&size=320&background=0a2472&color=ffffff&bold=true&font-size=0.33'"
+            >
+          </div>
+        </div>
+
+        <div class="hero__content reveal">
+          <p class="hero__greeting">Hello, I'm</p>
+          <h1 class="hero__name">B S S Aparna</h1>
+          <p class="hero__headline">Software Developer Engineer | AI Enthusiast | Lifelong Learner</p>
+          
+          <p class="hero__description">
+            Motivated Computer Science Engineering graduate with a strong foundation in software development concepts and 
+database management. Hands-on experience in building real-world applications through academic projects and 
+internships. Strong Problem solving ability, adaptability, and teamwork skills with a continuous learning mindset. 
+          </p>
+
+          <div class="hero__cta">
+            <a href="assets/resume.pdf" class="btn btn--primary" download="BSS_Aparna_Resume.pdf" aria-label="Download resume PDF">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn btn--secondary">Contact Me</a>
+            <a href="https://github.com/aparna857" class="btn btn--outline" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.37 1.23-3.21-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.21 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href=" 
+            LinkedIn: https://www.linkedin.com/in/aparna-bommana-415004307/ 
+            " class="btn btn--outline" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Get to Know Me</span>
+          <h2 class="section__title">About Me</h2>
+          <p class="section__subtitle">A dedicated fresher ready to make an impact in software engineering</p>
+        </div>
+
+        <div class="about__timeline">
+          <div class="about__item reveal">
+            <div class="about__marker"></div>
+            <div class="about__card">
+              <h3 class="about__card-title">Professional Summary</h3>
+              <p>
+                Recent graduate with a strong foundation in computer science and practical experience
+                building full-stack applications. Proficient in Java and Python with expertise in
+                Spring Boot, REST API development, and database design. Passionate about leveraging
+                AI/ML to solve real-world problems.
+              </p>
+            </div>
+          </div>
+
+          <div class="about__item reveal">
+            <div class="about__marker"></div>
+            <div class="about__card">
+              <h3 class="about__card-title">Career Objective</h3>
+              <p>
+                Seeking an entry-level Software Engineer role where I can apply my technical skills,
+                contribute to meaningful projects, and grow within a collaborative engineering culture.
+                Committed to writing clean, maintainable code and continuously expanding my knowledge
+                in cloud technologies and machine learning.
+              </p>
+            </div>
+          </div>
+
+          <div class="about__item reveal">
+            <div class="about__marker"></div>
+            <div class="about__card">
+              <h3 class="about__card-title">Personal Highlights</h3>
+              <ul class="about__list">
+                <li>Strong problem-solving skills with competitive programming experience</li>
+                <li>Active contributor to open-source and personal GitHub projects</li>
+                <li>Quick learner with a track record of self-driven skill development</li>
+                <li>Excellent team player with experience in academic group projects</li>
+                <li>Passionate about AI ethics and responsible technology development</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION SECTION ==================== -->
+    <section class="section section--alt" id="education">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Academic Background</span>
+          <h2 class="section__title">Education</h2>
+          <p class="section__subtitle">My academic journey</p>
+        </div>
+
+        <div class="edu__timeline">
+          <div class="edu__item reveal">
+            <div class="edu__date">
+              <span class="edu__year">2022 — 2026</span>
+            </div>
+            <div class="edu__content">
+              <h3 class="edu__degree">Bachelor of Technology in Computer Science</h3>
+              <p class="edu__institution">Gayatri vidya parishad college of Engineering for Women , Visakhapatnam, Andhra Pradesh</p>
+              <p class="edu__gpa"><strong>CGPA:</strong> 8.26</p>
+              <div class="edu__achievements">
+                
+              </div>
+              
+            </div>
+          </div>
+         
+          <div class="edu__item reveal">
+            <div class="edu__date">
+              <span class="edu__year">2020 — 2022</span>
+            </div>
+            <div class="edu__content">
+              <h3 class="edu__degree">Senior Secondary  Education </h3>
+              <p class="edu__institution">Govt Junior College — Tuni, Andhra Pradesh</p>
+              <p class="edu__gpa"><strong>Percentage:</strong> 78%</p>
+              
+            </div>
+
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="edu__timeline">
+          <div class="edu__item reveal">
+            <div class="edu__date">
+              <span class="edu__year">2019 — 2020</span>
+            </div>
+            <div class="edu__content">
+              <h3 class="edu__degree">Secondary Educatoion</h3>
+              <p class="edu__institution">Z P G High School, Payakaraopeta, Andhra Pradesh</p>
+              <p class="edu__gpa"><strong>Percentage:</strong> 96%</p>
+              <div class="edu__achievements">
+                
+              </div>
+              
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Technical Expertise</span>
+          <h2 class="section__title">Skills</h2>
+          <p class="section__subtitle">Technologies and tools I work with</p>
+        </div>
+
+        <div class="skills__resume reveal">
+          <div class="skills__row">
+            <span class="skills__category">Programming Languages:</span>
+            <span class="skills__items">Java, Basics of Python.</span>
+          </div>
+
+          <div class="skills__row">
+            <span class="skills__category">Web Development Skills:</span>
+            <span class="skills__items">HTML, CSS, JavaScript, React js.</span>
+          </div>
+
+          <div class="skills__row">
+            <span class="skills__category">Data Base:</span>
+            <span class="skills__items">SQL.</span>
+          </div>
+
+          <div class="skills__row">
+            <span class="skills__category">Core:</span>
+            <span class="skills__items">Software Development Life Cycle, OOPs Concepts, DBMS, Basics of DSA.</span>
+          </div>
+
+          <div class="skills__row">
+            <span class="skills__category">AI Technologies & AI Tools:</span>
+            <span class="skills__items">RAGs, LLMs, GPT, VS Code, Cursor, Power BI, GitHub, MS Office (Word, Excel, Power point).</span>
+          </div>
+
+          <div class="skills__row">
+            <span class="skills__category">Soft Skills:</span>
+            <span class="skills__items">Team Work, Problem Solving, Project Management, Good Communication, Adaptability.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">My Work</span>
+          <h2 class="section__title">Projects</h2>
+          <p class="section__subtitle">Selected projects showcasing my technical abilities</p>
+        </div>
+
+        <div class="projects__grid">
+          <article class="project-card reveal">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <a href="https://github.com/Aparna857" class="project-card__github" target="_blank" rel="noopener noreferrer" aria-label="View AI TaskFlow on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.37 1.23-3.21-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.21 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3 class="project-card__title">AI TaskFlow</h3>
+            <p class="project-card__desc">
+              Designed and implemented an AI-driven system that converts high-level business or learning goals into structured 
+weekly and daily task plans, reducing manual planning effort. 
+  
+            </p>
+            <p class="project-card__desc">Built a scalable full-stack application using React and Node.js, Rest APIs integrating a Python-based AI microservice 
+              for intelligent task generation.
+            </p>
+            <p class="project-card__desc">
+              Built an AI-driven platform that converts high-level user goals into weekly and daily tasks using LLM-based reasoning 
+(Gemini AI + LangChain + Fast APIs). 
+            </p>
+            <p class="project-card__desc">
+              Implemented secure authentication, role-based access, and admin dashboards to support enterprise-style user 
+management and analytics.
+            </p>
+            <div class="project-card__tech">
+              <span>React</span><span>FastAPI</span><span>MongoDB</span><span>Langchain</span><span></span><span>Gemini AI Microservice</span>
+              <span>Node js and Express js</span><span>Python</span>
+            </div>
+            <ul class="project-card__achievements">
+              <li>Reduced task planning time by 40% with AI-generated roadmaps</li>
+              <li>Implemented JWT authentication and role-based access control</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <a href="https://github.com/Aparna857/Adaptive-E-Learning-Platform.git" class="project-card__github" target="_blank" rel="noopener noreferrer" aria-label="View ML Predictor on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.37 1.23-3.21-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.21 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3 class="project-card__title"> Adaptive Learning Quiz System</h3>
+            <p class="project-card__desc">
+              Built a web-based adaptive quiz system using Python, Flask, HTML, CSS, and JavaScript. Implemented dynamic                 
+              difficulty adjustment based on user performance using rule-based logic
+            </p>
+            <p class="project-card__desc"> Developed question retrieval and evaluation modules with JSON-based question storage.</p>
+            <p class="project-card__desc"> Implemented user-friendly interface with progress tracking and result visualization.</p>
+            <p class="project-card__desc"> Integrated with a database for persistent question storage and analytics.</p>
+            <div class="project-card__tech">
+              <span>Python</span><span>Flask Framework</span><span>HTML,CSS,JavaScript</span>
+            </div>
+            <ul class="project-card__achievements">
+              <li>Achieved 78% prediction accuracy on test dataset</li>
+              <li>Built interactive dashboard with real-time visualizations</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <a href="https://github.com/yourusername/employee-api" class="project-card__github" target="_blank" rel="noopener noreferrer" aria-label="View Employee Management API on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.37 1.23-3.21-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.21 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3 class="project-card__title"> Bank Management System</h3>
+            <p class="project-card__desc">
+              Developed a full-stack Bank Management System using React, Spring Boot, and MySQL, supporting account creation, 
+              deposit, withdrawal, and deletion.
+            </p>
+            <p class="project-card__desc"> Implemented secure authentication, role-based access, and admin dashboards to support enterprise-style user 
+              management and analytics.</p>
+            <p class="project-card__desc"> Integrated with a database for persistent account storage and analytics.</p>
+            <div class="project-card__tech">
+              <span>Java</span><span>Spring Boot</span><span>Full Stack Web Application</span><span>MySQL</span><span>React</span>
+            </div>
+            <ul class="project-card__achievements">
+              <li>Ensured high transaction accuracy and data consistency through comprehensive API testing and database validation.</li>
+              <li> Developed secure REST APIs and integrated them with a React frontend for real-time banking operations.</li>
+           
+            </ul>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <a href="https://github.com/yourusername/portfolio-site" class="project-card__github" target="_blank" rel="noopener noreferrer" aria-label="View Portfolio Website on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.37 1.23-3.21-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.21 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3 class="project-card__title">Personal Portfolio Website</h3>
+            <p class="project-card__desc">
+              Responsive, accessible portfolio website with dark mode, particle animations,
+              and modern UI/UX — built with vanilla HTML, CSS, and JavaScript.
+            </p>
+            <div class="project-card__tech">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+            </div>
+            <ul class="project-card__achievements">
+              <li>Lighthouse score: 95+ across all categories</li>
+              <li>Fully responsive design with accessibility best practices</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS SECTION ==================== -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Credentials</span>
+          <h2 class="section__title">Internships &amp; Certifications</h2>
+          <p class="section__subtitle">Internships and professional certifications completed</p>
+        </div>
+
+        <div class="cert__resume reveal">
+          <div class="cert__row">
+            <span class="cert__dash" aria-hidden="true">–</span>
+            <p class="cert__text">Full Stack Java development under <strong>Wipro</strong>.</p>
+          </div>
+
+          <div class="cert__row">
+            <span class="cert__dash" aria-hidden="true">–</span>
+            <p class="cert__text">Web development Certification under <strong>EXCELR</strong>.</p>
+          </div>
+
+          <div class="cert__row">
+            <span class="cert__dash" aria-hidden="true">–</span>
+            <p class="cert__text">Artificial Intelligence and Machine Learning Certification under <strong>ELEWAYTE pvt. Limited</strong>.</p>
+          </div>
+
+          <div class="cert__row">
+            <span class="cert__dash" aria-hidden="true">–</span>
+            <p class="cert__text">Software programmer – python certification under <strong>CSC</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ACHIEVEMENTS SECTION ==================== -->
+    <section class="section section--alt" id="achievements">
+      <div class="container">
+        <div class="section__header reveal">
+          
+          <h2 class="section__title">Achievements</h2>
+          
+        </div>
+
+        <div class="achieve__grid">
+          <article class="achieve-card reveal">
+            <div class="achieve-card__icon" aria-hidden="true">🏆</div>
+ 
+            <h3 class="achieve-card__title">Scholarship</h3>
+            <p>  Selected for a Merit based scholarship covering hostel fees for all four years of B.Tech.</p>
+          </article>
+
+          <article class="achieve-card reveal">
+            <div class="achieve-card__icon" aria-hidden="true">🎓</div>
+            <p class="achieve-card__title">Competition</p>
+            
+            <p> Scored 20,910 rank in the AP EAMCEET (2022)exam with one month of coaching, ranking among 2 Lakh students.</p>
+          </article>
+
+          
+
+          <article class="achieve-card reveal">
+            <div class="achieve-card__icon" aria-hidden="true">⭐</div>
+            <h3 class="achieve-card__title">Problem Solving</h3>
+           
+            <p>Solved algorithmic problems on LeetCode,Hackerank problems and  maintaining a consistent daily practice streak.</p>
+          </article>
+
+         
+
+          <article class="achieve-card reveal">
+            <div class="achieve-card__icon" aria-hidden="true">🥇</div>
+            <h3 class="achieve-card__title">Academic</h3>
+         
+            <p> Achieved School Top Rank in Class X Board Examinations with score of 97.7%.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RESUME SECTION ==================== -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Curriculum Vitae</span>
+          <h2 class="section__title">Resume</h2>
+          <p class="section__subtitle">Preview and download my professional resume</p>
+        </div>
+
+        <div class="resume__wrapper reveal">
+          <div class="resume__preview">
+            <div class="resume__paper">
+              <div class="resume__paper-header">
+                <h3>B S S Aparna</h3>
+                <p> syamalaaparna04@gmail.com | +91 7780641857</p>
+              </div>
+              <div class="resume__paper-section">
+                <h4>Summary</h4>
+                <p>Fresher  with expertise in Java, Python, Spring Boot,  and AI fundamentals. Passionate about building scalable applications and continuous learning.</p>
+              </div>
+              <div class="resume__paper-section">
+                <h4>Education</h4>
+                <p><strong>B.Tech Computer Science</strong> — Gayatri visya parishad college of engineering for women (2022–2026) | CGPA: 8.26</p>
+              </div>
+              <div class="resume__paper-section">
+                <h4>Skills</h4>
+                <p>Java, Python, SQL, Spring Boot, HTML, CSS, JavaScript, React, SQL, GitHub,RAGs, LLMs, AI</p>
+              </div>
+              <div class="resume__paper-section">
+                <h4>Projects</h4>
+                <p><strong>AI TaskFlow</strong> — Designed and implemented an AI-driven system that converts high-level business or learning goals into structured 
+                  weekly and daily task plans, reducing manual planning effort. </p>
+                <p><strong> Adaptive Learning Platform</strong> —  Adaptive Learning Quiz System | Python, Flask Framework  – Built a web-based adaptive quiz system using Python, Flask, HTML, CSS, and JavaScript. Implemented dynamic                 
+                  difficulty adjustment based on user performance using rule-based logic</p>
+                  <p><strong>Bank Management System</strong> —  Developed a full-stack Bank Management System using React, Spring Boot, and MySQL, supporting account creation, 
+                    deposit, withdrawal, and deletion. 
+                     Built secure and scalable REST APIs and integrated them with a dynamic React frontend using Axios for real-time 
+                    data updates </p>
+            </div>
+            <div class="resume__overlay" aria-hidden="true"></div>
+          </div>
+
+          <div class="resume__actions">
+            <p class="resume__note">Download the full resume for complete details including certifications, achievements, and contact information.</p>
+            <a href="assets/resume.pdf" class="btn btn--primary btn--lg" download="BSS_Aparna_Resume.pdf">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Full Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Get In Touch</span>
+          <h2 class="section__title">Contact Me</h2>
+          <p class="section__subtitle">I'm open to new opportunities — let's connect!</p>
+        </div>
+
+        <div class="contact__wrapper">
+          <div class="contact__info reveal">
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <a href="mailto:syamalaaparna04@gmail.com">syamalaaparna04@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <h3>Phone</h3>
+                <a href="tel:+917780641857">+91 7780641857</a>
+              </div>
+            </div>
+
+            <div class="contact__item">
+              <div class="contact__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <h3>Location</h3>
+                <p>visakhapatnam, Andhra Pradesh, India</p>
+              </div>
+            </div>
+
+            <div class="contact__socials">
+              <a href="
+              LinkedIn: https://www.linkedin.com/in/aparna-bommana-415004307/ 
+    " class="contact__social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://github.com/aparna857" class="contact__social" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.37 1.23-3.21-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.21 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact__form reveal" id="contact-form" novalidate>
+            <div class="form__group">
+              <label for="name">B S S Aparna</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
+              <span class="form__error" id="name-error" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="email">syamalaaparna04@gmail.com</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+              <span class="form__error" id="email-error" role="alert"></span>
+            </div>
+            
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+              <span class="form__error" id="message-error" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg form__submit">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+            <p class="form__success" id="form-success" role="status" hidden>Thank you! Your message has been sent successfully.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p> <strong>B S S Aparna</strong>. All rights reserved.</p>
+      <p class="footer__tagline">Built with passion using HTML, CSS & JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
