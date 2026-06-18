@@ -81,7 +81,21 @@ def build_resume() -> None:
 
     pdf.set_font("Helvetica", "B", 10)
     pdf.set_text_color(10, 36, 114)
-    pdf.cell(0, 5, "Adaptive Learning Quiz System", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(
+    0, 6,
+    "GitHub: https://github.com/Aparna857",
+    new_x="LMARGIN",
+    new_y="NEXT",
+    align="C"
+)
+
+pdf.cell(
+    0, 6,
+    "LinkedIn: https://www.linkedin.com/in/aparna-bommana/",
+    new_x="LMARGIN",
+    new_y="NEXT",
+    align="C"
+)
     pdf.body_text(
         "Web-based adaptive quiz system using Python, Flask, HTML, CSS, and JavaScript with dynamic "
         "difficulty adjustment and progress tracking."
