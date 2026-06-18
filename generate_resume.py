@@ -40,7 +40,13 @@ def build_resume() -> None:
     # Header
     pdf.set_font("Helvetica", "B", 22)
     pdf.set_text_color(10, 36, 114)
-    pdf.cell(0, 10, "B S S Aparna", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.cell(
+    0, 6,
+    "GitHub: https://github.com/Aparna857 | LinkedIn: https://www.linkedin.com/in/aparna-bommana/",
+    new_x="LMARGIN",
+    new_y="NEXT",
+    align="C"
+)
 
     pdf.set_font("Helvetica", "", 11)
     pdf.set_text_color(60, 60, 60)
