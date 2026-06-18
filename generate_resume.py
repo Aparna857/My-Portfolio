@@ -46,13 +46,13 @@ def build_resume() -> None:
     pdf.set_text_color(60, 60, 60)
     pdf.cell(0, 6, "Software Engineer | AI Enthusiast | Lifelong Learner", new_x="LMARGIN", new_y="NEXT", align="C")
     pdf.cell(0, 6, "syamalaaparna04@gmail.com | +91 7780641857 | Visakhapatnam, AP, India", new_x="LMARGIN", new_y="NEXT", align="C")
-    pdf.cell(0, 6, "GitHub: github.com/Aparna857 | LinkedIn: linkedin.com/in/aparna-bommana-415004307", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.cell(0, 6, "GitHub: github.com/Aparna857 | LinkedIn: linkedin.com/in/aparna-bommana/", new_x="LMARGIN", new_y="NEXT", align="C")
     pdf.ln(6)
 
     pdf.section_title("SUMMARY")
     pdf.body_text(
-        "Fresher Software Engineer with expertise in Java, Python, Spring Boot, REST APIs, and AI fundamentals. "
-        "Passionate about building scalable applications, full-stack development, and continuous learning."
+        "Fresher Software Engineer with expertise in Java, Spring, and AI fundamentals. "
+        "Passionate about building scalable applications, java and Ai development, and continuous learning."
     )
 
     pdf.section_title("EDUCATION")
@@ -61,10 +61,10 @@ def build_resume() -> None:
     )
 
     pdf.section_title("SKILLS")
-    pdf.bullet("Programming Languages: Java, Basics of Python.")
+    pdf.bullet("Programming Languages: Java, Spring, Basics of Python.")
     pdf.bullet("Web Development Skills: HTML, CSS, JavaScript, React js.")
     pdf.bullet("Data Base: SQL.")
-    pdf.bullet("Core: Software Development Life Cycle, OOPs Concepts, DBMS, Basics of DSA.")
+    pdf.bullet("Core: Software Development Life Cycle, OOPs Concepts, AI Concepts, Basics of DSA.")
     pdf.bullet("AI Technologies & Tools: RAGs, LLMs, GPT, VS Code, Cursor, Power BI, GitHub, MS Office.")
     pdf.bullet("Soft Skills: Team Work, Problem Solving, Project Management, Good Communication, Adaptability.")
     pdf.ln(2)
